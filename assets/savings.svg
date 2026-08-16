@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">
+<rect x="1" y="1" width="878" height="398" rx="12" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="28" y="38" font-size="18" font-weight="600" fill="#1f2328">What benjamin-plus saves on the median task</text>
+<text x="28" y="58" font-size="13" fill="#59636e">80 paired SkillsBench tasks · Claude Code · Sonnet 5 · paired Wilcoxon vs identical no-skill runs</text>
+<line x1="290" y1="72" x2="290" y2="360" stroke="#e6e9ec" stroke-width="1"/>
+<text x="290" y="378" font-size="11" fill="#59636e" text-anchor="middle">−5%</text>
+<line x1="380" y1="72" x2="380" y2="360" stroke="#e6e9ec" stroke-width="1"/>
+<text x="380" y="378" font-size="11" fill="#59636e" text-anchor="middle">−10%</text>
+<line x1="470" y1="72" x2="470" y2="360" stroke="#e6e9ec" stroke-width="1"/>
+<text x="470" y="378" font-size="11" fill="#59636e" text-anchor="middle">−15%</text>
+<line x1="560" y1="72" x2="560" y2="360" stroke="#e6e9ec" stroke-width="1"/>
+<text x="560" y="378" font-size="11" fill="#59636e" text-anchor="middle">−20%</text>
+<line x1="650" y1="72" x2="650" y2="360" stroke="#e6e9ec" stroke-width="1"/>
+<text x="650" y="378" font-size="11" fill="#59636e" text-anchor="middle">−25%</text>
+<text x="190" y="97.0" font-size="13" fill="#1f2328" text-anchor="end">Total tokens</text>
+<path d="M200 78 h390 a4 4 0 0 1 4 4 v22 a4 4 0 0 1 -4 4 h-390 z" fill="#1a7f37"/>
+<text x="602" y="97.0" font-size="13" font-weight="600" fill="#1f2328">−21.9%</text>
+<text x="660" y="97.0" font-size="12" fill="#59636e">(p = 0.001)</text>
+<text x="190" y="143.0" font-size="13" fill="#1f2328" text-anchor="end">Output tokens</text>
+<path d="M200 124 h378 a4 4 0 0 1 4 4 v22 a4 4 0 0 1 -4 4 h-378 z" fill="#1a7f37"/>
+<text x="590" y="143.0" font-size="13" font-weight="600" fill="#1f2328">−21.2%</text>
+<text x="648" y="143.0" font-size="12" fill="#59636e">(p = 0.007)</text>
+<text x="190" y="189.0" font-size="13" fill="#1f2328" text-anchor="end">Conversation turns</text>
+<path d="M200 170 h356 a4 4 0 0 1 4 4 v22 a4 4 0 0 1 -4 4 h-356 z" fill="#1a7f37"/>
+<text x="568" y="189.0" font-size="13" font-weight="600" fill="#1f2328">−20.0%</text>
+<text x="626" y="189.0" font-size="12" fill="#59636e">(p = 0.001)</text>
+<text x="190" y="235.0" font-size="13" fill="#1f2328" text-anchor="end">Cost ($)</text>
+<path d="M200 216 h318 a4 4 0 0 1 4 4 v22 a4 4 0 0 1 -4 4 h-318 z" fill="#1a7f37"/>
+<text x="530" y="235.0" font-size="13" font-weight="600" fill="#1f2328">−17.9%</text>
+<text x="588" y="235.0" font-size="12" fill="#59636e">(p = 0.005)</text>
+<text x="190" y="281.0" font-size="13" fill="#1f2328" text-anchor="end">Wall-clock time</text>
+<path d="M200 262 h277 a4 4 0 0 1 4 4 v22 a4 4 0 0 1 -4 4 h-277 z" fill="#1a7f37"/>
+<text x="489" y="281.0" font-size="13" font-weight="600" fill="#1f2328">−15.6%</text>
+<text x="547" y="281.0" font-size="12" fill="#59636e">(p = 0.018)</text>
+<text x="190" y="327.0" font-size="13" fill="#1f2328" text-anchor="end">Code written</text>
+<path d="M200 308 h235 a4 4 0 0 1 4 4 v22 a4 4 0 0 1 -4 4 h-235 z" fill="#1a7f37"/>
+<text x="447" y="327.0" font-size="13" font-weight="600" fill="#1f2328">−13.3%</text>
+<text x="505" y="327.0" font-size="12" fill="#59636e">(p = 0.006)</text>
+<line x1="200" y1="72" x2="200" y2="360" stroke="#9ba3ab" stroke-width="1"/>
+</svg>

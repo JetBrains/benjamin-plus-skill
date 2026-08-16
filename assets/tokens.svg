@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="276" viewBox="0 0 880 276" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">
+<rect x="1" y="1" width="878" height="274" rx="12" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="28" y="38" font-size="18" font-weight="600" fill="#1f2328">Where the tokens go — full 82-task run, both arms</text>
+<text x="28" y="58" font-size="13" fill="#59636e">The bill is re-reading history: cache reads dominate, and fewer/leaner steps shrink them 26%</text>
+<rect x="28" y="70" width="12" height="12" rx="3" fill="#1a7f37"/>
+<text x="45" y="81" font-size="12" fill="#59636e">cache reads</text>
+<rect x="161" y="70" width="12" height="12" rx="3" fill="#0969da"/>
+<text x="178" y="81" font-size="12" fill="#59636e">fresh input</text>
+<rect x="294" y="70" width="12" height="12" rx="3" fill="#bf8700"/>
+<text x="311" y="81" font-size="12" fill="#59636e">output</text>
+<text x="140" y="122.0" font-size="13" font-weight="600" fill="#1f2328" text-anchor="end">no skill</text>
+<rect x="150.0" y="96" width="492.4" height="44" fill="#1a7f37"/>
+<text x="158.0" y="122.0" font-size="12" fill="#ffffff">57.8M tok</text>
+<rect x="644.4" y="96" width="15.8" height="44" fill="#0969da"/>
+<path d="M662.1 96 h1.5 a4 4 0 0 1 4 4 v36 a4 4 0 0 1 -4 4 h-1.5 z" fill="#bf8700"/>
+<text x="675.6" y="122.0" font-size="14" font-weight="600" fill="#1f2328">60.5M</text>
+<text x="140" y="192.0" font-size="13" font-weight="600" fill="#1f2328" text-anchor="end">benjamin-plus</text>
+<rect x="150.0" y="166" width="364.4" height="44" fill="#1a7f37"/>
+<text x="158.0" y="192.0" font-size="12" fill="#ffffff">42.9M tok</text>
+<rect x="516.4" y="166" width="15.3" height="44" fill="#0969da"/>
+<path d="M533.7 166 h1.0 a4 4 0 0 1 4 4 v36 a4 4 0 0 1 -4 4 h-1.0 z" fill="#bf8700"/>
+<text x="546.3" y="192.0" font-size="14" font-weight="600" fill="#1f2328">45.4M</text>
+<text x="608.3" y="192.0" font-size="13" fill="#1a7f37" font-weight="600">−25%</text>
+</svg>
