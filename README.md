@@ -14,11 +14,13 @@ It changes how the agent <strong>looks things up and waits</strong> — never wh
 
 ## What the skill teaches
 
-1. **Recon in one pass** — collect every independent fact in a single step; sample two examples before copying a convention.
-2. **Keyhole reads** — every inspection command carries a limiter (`head`, `tail`, `grep -m`, offset/limit); never truncate data you will transform.
-3. **Probe the environment once** — one batched import/binary check, one install command. No traceback-at-a-time discovery.
-4. **Green means the task's own check** — task-named commands *are* the check; an "environmental" failure is still yours to fix; same check failing twice → change approach; stop at green. No bespoke verification harnesses.
-5. **Polling is a step** — wait for running commands in ≥30 s slices, never sub-second re-polls. Free where execution blocks; large savings where it doesn't.
+An agent pays twice for every clumsy lookup: once for the step itself, and again every time the growing conversation gets re-read. So the skill teaches five habits:
+
+1. **Recon in one pass.** Gather the facts up front in one combined step instead of poking at the repo five separate times. And before copying a format or convention, look at two real examples, not one.
+2. **Keyhole reads.** When the agent only needs to *see* something, it reads 50 lines, not the whole file. Data it will actually transform is never truncated.
+3. **Probe the environment once.** Check every dependency in one command and install whatever is missing in one go, instead of discovering them one crash at a time.
+4. **Green means the task's own check.** If the task says how to verify, that command is the definition of done. A missing compiler is still the agent's problem to fix, and a check that fails twice means the approach is wrong, not the symptom. When it passes: stop.
+5. **Polling is a step.** A build that hasn't finished has nothing new to say. Check on it every 30 seconds, not every second. On some agent platforms, polling alone turned out to be nearly half of all steps.
 
 The skill's full text: [`RULESET.md`](RULESET.md) (~745 tokens injected).
 
@@ -60,7 +62,9 @@ cat ~/.benjamin-plus/injected-instruction.md >> ~/.codex/AGENTS.md   # or >> AGE
 
 ## How it was measured
 
-Paired A/B: identical agent, model, tasks, and container images — the arms differ only by the injected ruleset. 80 paired SkillsBench tasks (Docker-sandboxed Claude Code 2.1.201, Sonnet 5, low effort), paired Wilcoxon on the deltas, sign test on rewards, per-trial adoption audits (injection 80/80 vs 0/80), one-sided failures retried before counting. Built in six iterations from trace-mining ~1,200 agent trials; every rule's target pool was measured before inclusion, and rules that traded quality for savings were deleted. Full write-up with every number and caveat: [`EXPECTED-RESULTS.md`](EXPECTED-RESULTS.md).
+This skill wasn't written once and shipped. It came out of **auto research**: an agent working in a loop against the benchmark. Mine ~1,200 old agent traces for where the money actually goes, draft rules, run a paired A/B, read the failing trajectories, revise, run again. Six versions later, only the rules that survived the evidence were left. Everything that traded quality for savings got deleted along the way, which turned out to be most of the clever ideas.
+
+The measurement itself is a paired A/B. Same agent, same model, same tasks, same container images; the only difference between the arms is the injected skill text. 80 paired SkillsBench tasks (Claude Code 2.1.201 in Docker sandboxes, Sonnet 5, low effort), Wilcoxon on the paired deltas, a sign test on rewards, and a per-trial adoption check: the payload reached the model in 80 of 80 treated runs and 0 of 80 controls. Trials that failed on one side only were retried before anything was counted. Every number and caveat lives in [`EXPECTED-RESULTS.md`](EXPECTED-RESULTS.md).
 
 ## Feedback
 
