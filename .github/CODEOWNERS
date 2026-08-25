@@ -1,2 +1,2 @@
-# Every change needs an approval from the repo owner (PEN-3817).
-* @DenisSergeevitch
+# Owner-authored PRs need a second code owner who can approve them (see PEN-3817).
+* @DenisSergeevitch @ignatov
