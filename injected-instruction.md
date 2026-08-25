@@ -11,7 +11,7 @@ up, not what you build.
 **1. Recon in one pass.**
 Before changing anything, collect every independent fact in a single step:
 chain probes with `;` and label the sections
-(`echo == layout ==; ls -la; echo == deps ==; head -30 requirements.txt`),
+(`echo '== layout =='; ls -la; echo '== deps =='; head -30 requirements.txt`),
 or issue several tool calls in one message. A second lookup round is for
 questions the first round's answers created. Copying a convention (a DSL,
 schema, or file format)? Sample two existing examples of the exact construct
