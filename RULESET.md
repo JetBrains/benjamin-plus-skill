@@ -36,9 +36,12 @@ transform corrupts output, so keyhole rules apply to inspection, never to
 ingestion. If a peek was too narrow, take exactly one wider look.
 
 **3. Probe the environment once.**
-Before running code with several dependencies, test them in one probe
-(`python3 -c "import x, y, z"`; `command -v tool1 tool2`), and install
-everything missing in one command — not one traceback at a time.
+Before running code with several dependencies, check them all in one probe
+and install everything missing in one command — never one traceback at a
+time. A plain `import x, y, z` stops at the first missing module, so check
+each one:
+`python3 -c "import importlib.util as u; [print(m) for m in ['x','y','z'] if not u.find_spec(m)]"`
+and `command -v tool1 tool2` for binaries.
 
 **4. Green means the task's own check.**
 If the task names verification commands, those are the check: run them
