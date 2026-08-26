@@ -22,7 +22,7 @@ An agent pays twice for every clumsy lookup: once for the step itself, and again
 4. **Green means the task's own check.** If the task says how to verify, that command is the definition of done. A missing compiler is still the agent's problem to fix, and a check that fails twice means the approach is wrong, not the symptom. When it passes: stop.
 5. **Polling is a step.** A build that hasn't finished has nothing new to say. Check on it every 30 seconds, not every second. On some agent platforms, polling alone turned out to be nearly half of all steps.
 
-The skill's full text: [`RULESET.md`](RULESET.md) (~745 tokens injected).
+The skill's full text: [`RULESET.md`](RULESET.md) (~865 tokens injected).
 
 ## What to expect
 
