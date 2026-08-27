@@ -21,7 +21,7 @@ up, not what you build.
 **1. Recon in one pass.**
 Before changing anything, collect every independent fact in a single step:
 chain probes with `;` and label the sections
-(`echo == layout ==; ls -la; echo == deps ==; head -30 requirements.txt`),
+(`echo '== layout =='; ls -la; echo '== deps =='; head -30 requirements.txt`),
 or issue several tool calls in one message. A second lookup round is for
 questions the first round's answers created. Copying a convention (a DSL,
 schema, or file format)? Sample two existing examples of the exact construct
@@ -29,8 +29,11 @@ you will write, not one.
 
 **2. Look through a keyhole.**
 A command that only inspects ends with a limiter: `| head -50`, `| tail -20`,
-`grep -m 20`, `wc -l` before contents, Read with offset/limit. Size unknown?
-Measure first, then read the slice you need. Read a file whole only when you
+`grep -m 20` (that cap is per file — pipe recursive searches through
+`| head -20`), Read with offset/limit. Pipes cap stdout only: add `2>&1` when
+a tool is loud on stderr. Size unknown? Measure lines and bytes first
+(`wc -lc` — a minified file can be one megabyte-long line), then read the
+slice you need. Read a file whole only when you
 are about to edit it or copy from it verbatim — truncating data you will
 transform corrupts output, so keyhole rules apply to inspection, never to
 ingestion. If a peek was too narrow, take exactly one wider look.
@@ -38,10 +41,16 @@ ingestion. If a peek was too narrow, take exactly one wider look.
 **3. Probe the environment once.**
 Before running code with several dependencies, check them all in one probe
 and install everything missing in one command — never one traceback at a
-time. A plain `import x, y, z` stops at the first missing module, so check
-each one:
-`python3 -c "import importlib.util as u; [print(m) for m in ['x','y','z'] if not u.find_spec(m)]"`
-and `command -v tool1 tool2` for binaries.
+time. A plain `import x, y, z` stops at the first missing module, and
+`find_spec("pkg.sub")` raises when the parent is absent, so check each one:
+`python3 -c "
+import importlib.util as u
+for m in ['x','y.z']:
+    try: ok = u.find_spec(m)
+    except ModuleNotFoundError: ok = None
+    if not ok: print('missing:', m)"`
+For binaries, `command -v a b` can exit 0 while `a` is missing, so name the
+gaps: `for t in tool1 tool2; do command -v "$t" >/dev/null || echo "missing: $t"; done`
 
 **4. Green means the task's own check.**
 If the task names verification commands, those are the check: run them
