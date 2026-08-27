@@ -31,9 +31,14 @@ ingestion. If a peek was too narrow, take exactly one wider look.
 **3. Probe the environment once.**
 Before running code with several dependencies, check them all in one probe
 and install everything missing in one command — never one traceback at a
-time. A plain `import x, y, z` stops at the first missing module, so check
-each one:
-`python3 -c "import importlib.util as u; [print(m) for m in ['x','y','z'] if not u.find_spec(m)]"`
+time. A plain `import x, y, z` stops at the first missing module, and
+`find_spec("pkg.sub")` raises when the parent is absent, so check each one:
+`python3 -c "
+import importlib.util as u
+for m in ['x','y.z']:
+    try: ok = u.find_spec(m)
+    except ModuleNotFoundError: ok = None
+    if not ok: print('missing:', m)"`
 For binaries, `command -v a b` can exit 0 while `a` is missing, so name the
 gaps: `for t in tool1 tool2; do command -v "$t" >/dev/null || echo "missing: $t"; done`
 
